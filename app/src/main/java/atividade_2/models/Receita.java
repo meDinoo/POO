@@ -7,6 +7,8 @@ public class Receita {
     private Date data;
     private String descritivo;
 
+    public Receita(){}
+
     public Receita(Consulta consulta, Date data, String descritivo) {
         this.consulta = consulta;
         this.data = data;

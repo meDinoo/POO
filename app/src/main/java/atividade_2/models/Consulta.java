@@ -11,6 +11,8 @@ public class Consulta {
     private String motivo;
     private String historico;
 
+    public Consulta(){}
+    
     public Consulta(Date data, String historico, Time hora, Medico medico, String motivo, Paciente paciente) {
         this.data = data;
         this.historico = historico;

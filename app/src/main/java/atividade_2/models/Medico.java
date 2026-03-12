@@ -6,6 +6,8 @@ public class Medico extends Usuario {
     private String telefone;
     private String especialidade;
 
+    public Medico(){ super("",""); }
+
     public Medico(
         String nome,
         String crm,

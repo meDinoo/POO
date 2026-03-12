@@ -15,8 +15,8 @@ import atividade_2.models.Recepcionista;
 
 public class App {
     public static void main(String[] args) {
-        Date hoje = new Date().DateFormat("dd/MM/yy");
-        Time agora = new Time().now()
+        Date hoje = new Date();
+        Time agora = new Time();
 
         Paciente paciente = new Paciente("Dino", "12345678910", "11958887766", "Masculino", 19);
         Medico medico = new Medico("Caio Rosa", "696969", "11937487290", "Clinico Geral", "Senha@2026");

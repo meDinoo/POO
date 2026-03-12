@@ -4,6 +4,8 @@ public class Recepcionista extends Usuario {
    
     private String cpf;
     private String telefone;
+
+    public Recepcionista(){super("","");}
     
 
     public Recepcionista(String cpf, String nome, String senha, String telefone) {

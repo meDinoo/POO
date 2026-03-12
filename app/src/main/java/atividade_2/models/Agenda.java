@@ -10,6 +10,8 @@ public class Agenda {
     private Medico medico;
     private Paciente paciente;
 
+    public Agenda(){}
+    
     public Agenda(Date data, Time hora, Medico medico, Paciente paciente) {
         this.data = data;
         this.hora = hora;

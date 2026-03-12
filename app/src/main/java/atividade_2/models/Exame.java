@@ -7,6 +7,8 @@ public class Exame {
     private Date data;
     private String descritivo;
 
+    public Exame(){}
+    
     public Exame(Consulta consulta, Date data, String descritivo) {
         this.consulta = consulta;
         this.data = data;

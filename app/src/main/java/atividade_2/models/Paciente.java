@@ -7,6 +7,8 @@ public class Paciente {
     private String genero;
     private  int idade;
 
+    public Paciente(){}
+    
     public Paciente(
         String nome,
         String cpf,
@@ -20,6 +22,8 @@ public class Paciente {
         this.genero = genero;
         this.idade = idade;
     }
+
+
     
     public String getNome() {
         return nome;

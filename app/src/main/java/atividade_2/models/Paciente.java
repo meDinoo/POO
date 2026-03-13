@@ -34,10 +34,13 @@ public class Paciente {
     }
 
     public String getCpf() {
+        
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(String cpf) throws Exception {
+        if(cpf.length()<11)
+            throw new Exception("CPF invalido");
         this.cpf = cpf;
     }
 
@@ -72,6 +75,15 @@ public class Paciente {
     public Paciente[] Consultar(){
         Paciente[] result = {new Paciente("dino", "12334", "1234", "masculino", 19) };
         return result;
+    }
+
+    public void mostar(Paciente paciente){
+        System.out.println("=== Paciente ===");
+        System.out.println("Nome: " + paciente.getNome());
+        System.out.println("CPF: " + paciente.getCpf());
+        System.out.println("Telefone: " + paciente.getTelefone());
+        System.out.println("Genero: " + paciente.getGenero());
+        System.out.println("Idade: " + paciente.getIdade());
     }
 }
 

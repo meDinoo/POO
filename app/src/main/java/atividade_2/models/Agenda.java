@@ -1,18 +1,18 @@
 package atividade_2.models;
 
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Agenda {
 
     private Date data;
-    private Time hora;
+    private LocalTime hora;
     private Medico medico;
     private Paciente paciente;
 
     public Agenda(){}
     
-    public Agenda(Date data, Time hora, Medico medico, Paciente paciente) {
+    public Agenda(Date data, LocalTime hora, Medico medico, Paciente paciente) {
         this.data = data;
         this.hora = hora;
         this.medico = medico;
@@ -24,14 +24,15 @@ public class Agenda {
     }
 
     public void setData(Date data) {
-        this.data = data;
+        
+        this.data = data;   
     }
 
-    public Time getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
@@ -39,7 +40,9 @@ public class Agenda {
         return medico;
     }
 
-    public void setMedico(Medico medico) {
+    public void setMedico(Medico medico) throws Exception {
+        if(medico.getNome().isEmpty() || medico.getCrm().isEmpty())
+            throw new Exception("Medico invalido");
         this.medico = medico;
     }
 
@@ -53,5 +56,13 @@ public class Agenda {
 
     public void consultar(){
         
+    }
+
+    public void mostrar(Agenda agenda){
+        System.out.println("\n\n=== Agenda ===");
+        System.out.println("Data: " + agenda.getData());
+        System.out.println("Hora: " + agenda.getHora());
+        System.out.println("Medico: " + agenda.getMedico().getNome());
+        System.out.println("Paciente: " + agenda.getPaciente().getNome());
     }
 }

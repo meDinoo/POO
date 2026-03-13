@@ -1,11 +1,11 @@
 package atividade_2.models;
 
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Consulta {
     private Date data;
-    private Time hora;
+    private LocalTime hora;
     private Medico medico;
     private Paciente paciente;
     private String motivo;
@@ -13,7 +13,7 @@ public class Consulta {
 
     public Consulta(){}
     
-    public Consulta(Date data, String historico, Time hora, Medico medico, String motivo, Paciente paciente) {
+    public Consulta(Date data, String historico, LocalTime hora, Medico medico, String motivo, Paciente paciente) {
         this.data = data;
         this.historico = historico;
         this.hora = hora;
@@ -27,10 +27,10 @@ public class Consulta {
     public void setData(Date data) {
         this.data = data;
     }
-    public Time getHora() {
+    public LocalTime getHora() {
         return hora;
     }
-    public void setHora(Time hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
     public Medico getMedico() {
@@ -42,7 +42,10 @@ public class Consulta {
     public Paciente getPaciente() {
         return paciente;
     }
-    public void setPaciente(Paciente paciente) {
+    public void setPaciente(Paciente paciente) throws Exception {
+
+        if(paciente.getNome().isEmpty())
+            throw new Exception("Usuario invalido");
         this.paciente = paciente;
     }
     public String getMotivo() {
@@ -74,5 +77,16 @@ public class Consulta {
 
     public boolean Atualiar(){
         return true;
+    }
+
+    public void mostrar(Consulta consulta){
+        
+        System.out.println("\n\n=== Consulta ===");
+        System.out.println("Data: " + consulta.getData());
+        System.out.println("Hora: " + consulta.getHora());
+        System.out.println("Motivo: " + consulta.getMotivo());
+        System.out.println("Historico: " + consulta.getHistorico());
+
+        
     }
 }

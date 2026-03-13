@@ -23,7 +23,9 @@ public class Exame {
     public Date getData() {
         return data;
     }
-    public void setData(Date data) {
+    public void setData(Date data) throws Exception {
+        if(data == null)
+            throw new Exception("Data invalida");
         this.data = data;
     }
     public String getDescritivo() {
@@ -38,4 +40,13 @@ public class Exame {
     }
 
     public void Consultar(){}
+
+    public void mostar(Exame exame){
+        
+        System.out.println("\n\n=== Exame ===");
+        System.out.println("Descricao: " + exame.getDescritivo());
+        System.out.println("Data: " + exame.getData());
+
+        
+    }
 }

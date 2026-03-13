@@ -23,7 +23,9 @@ public abstract class Usuario {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(String senha) throws Exception {
+        if(!senha.chars().anyMatch(Character::isUpperCase))
+            throw  new Exception("Senha invalida, precisa de um caracter maiusculo");
         this.senha = senha;
     }
 

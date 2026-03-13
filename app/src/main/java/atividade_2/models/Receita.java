@@ -31,14 +31,22 @@ public class Receita {
         this.data = data;
     }
 
-    public String getDescritivo() {
+    public String getDescritivo()  {
         return descritivo;
     }
 
-    public void setDescritivo(String descritivo) {
+    public void setDescritivo(String descritivo) throws Exception {
+        if(descritivo.isEmpty())
+            throw new Exception("Descrição invalida");
         this.descritivo = descritivo;
     }
 
     public void Prescrecer(){}
     public void  consutar(){}
+
+    public void mostrar(Receita receita){
+        System.out.println("\n\n=== Receita ===");
+        System.out.println("Descricao: " + receita.getDescritivo());
+        System.out.println("Data: " + receita.getData());
+    }
 }

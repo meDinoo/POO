@@ -23,7 +23,12 @@ public class Medico extends Usuario {
     }
     
     public String getCrm(){return crm; };
-    public void setCrm(String crm){this.crm = crm;}
+    public void setCrm(String crm) throws Exception
+    {
+        if(crm.length()<6)
+            throw new Exception("CRM invalido!");
+        this.crm = crm;
+    }
 
     public String getTelefone(){return telefone; };
     public void setTelefone(String telefone){this.telefone = telefone;}
@@ -37,5 +42,16 @@ public class Medico extends Usuario {
             return true;
 
         return false;
+    }
+
+    public void mostar(Medico medico){
+        
+        System.out.println("\n\n=== Medico ===");
+        System.out.println("Nome: " + medico.getNome());
+        System.out.println("CRM: " + medico.getCrm());
+        System.out.println("Telefone: " + medico.getTelefone());
+        System.out.println("Especialidade: " + medico.getEspecialidade());
+
+        
     }
 }

@@ -1,6 +1,8 @@
 package atividade_2.models;
 
-public class Recepcionista extends Usuario {
+import atividade_2.Repository.IUsuario;
+
+public class Recepcionista extends Usuario implements IUsuario<Recepcionista>{
    
     private String cpf;
     private String telefone;
@@ -38,14 +40,15 @@ public class Recepcionista extends Usuario {
         System.out.println("Telefone: " + recepcionista.getTelefone());
         
     }
-    
 
     @Override
-    public <T extends Usuario> boolean acessar(T usuario){
-        if(usuario.getNome() != null && usuario.getSenha() != null)
-            return true;
-
-        return false;
+    public boolean acessar(Recepcionista usuario) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
+    @Override
+    public boolean desconectar(Recepcionista usuario) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }

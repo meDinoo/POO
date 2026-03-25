@@ -1,5 +1,7 @@
 package atividade_2.models;
 
+import java.util.Date;
+
 import atividade_2.Repository.IUsuario;
 
 
@@ -61,6 +63,9 @@ public class Medico extends Usuario implements IUsuario<Medico>{
         Exame e1 = new Exame(c1, agenda.getData(), "muitas coisas");
 
         c1.getExames().add(e1);
+        c1.getExames().add(new Exame(c1, new Date(), "eita ne"));
+        c1.getReceitas().add(new Receita(c1, new Date(), "vish"));
+        c1.mostrar(c1);
 
 
     }
